@@ -1,0 +1,148 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="codeTips.master.cs" Inherits="final_proj.codeTips" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Code Tips</title>
+    <style>
+        /*
+            all classes starting with "base" are so the only apply in the master page and not any pages built on it
+        */
+        body {
+            direction: rtl;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background-image: url("res/background.jpg");
+            background-size: 100%;
+            background-repeat: repeat-y;
+            text-align: center;
+        }
+
+        /* for all children of body */
+        body > * {
+            /* to make text more visible */
+            background-color: #fff8dd;
+        }
+
+        .base-table, .base-tr, .base-td {
+            border: none;
+        }
+
+        .base-table {
+            margin: auto auto;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        /* for code snippets */
+        .code {
+            direction: ltr;
+            text-align: start;
+            background-color: #1E1E1E;
+            color: white;
+            padding: 5px;
+        }
+
+        a {
+            color: #0070c9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2, h3, h4, h5, h6 {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #0070c9;
+            margin-top: 30px;
+        }
+
+        p {
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function displayTime() {
+            const outElementId = "clock";
+
+            // get current date and time
+            const dateObj = new Date();
+
+            // format the time
+            const formatted = dateObj.toLocaleTimeString();
+
+            // display
+            document.getElementById(outElementId).innerHTML = formatted;
+        }
+
+        /*
+         * display a new time every second
+         */
+        function updateClock() {
+            var intervalId = window.setInterval(displayTime, 1000);
+        }
+
+        updateClock();
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <table class="base-table">
+        <tr class="base-tr header">
+            <!-- login -->
+            <td class="base-td">
+                login
+            </td>
+            <!-- title -->
+            <td class="base-td" id="top">
+                <h1>
+                    קוד טיפס
+                </h1>
+            </td>
+            <!-- clock -->
+            <td class="base-td" id="clock" dir="ltr"></td>
+        </tr>
+        <!-- menu -->
+        <tr class="header">
+            <td colspan="3">
+                [&nbsp <a href="PHome.aspx">בית</a> &nbsp] &nbsp &nbsp
+                [&nbsp <a href="PInputAndOutput.aspx">קלט ופלט</a> &nbsp] &nbsp &nbsp
+                [&nbsp <a href="PIf.aspx">משפטי תנאי</a> &nbsp] &nbsp &nbsp
+                [&nbsp <a href="PForLoop.aspx">לולאות for</a> &nbsp] &nbsp &nbsp
+                [&nbsp <a href="PWhileLoop.aspx">לולאות while</a> &nbsp] &nbsp &nbsp
+                [&nbsp <a href="PContactUs.aspx">צור קשר</a> &nbsp] &nbsp &nbsp
+            </td>
+        </tr>
+        <!-- main -->
+        <tr>
+            <td colspan="3">
+                <main>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </main>
+            </td>
+        </tr>
+        <!-- back to top button -->
+        <tr>
+            <td colspan="3">
+                <a href="#top">
+                    <img src="res/up-arrow.png"
+                        width="20"
+                        height="20" />
+                </a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
