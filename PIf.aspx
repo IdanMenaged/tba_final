@@ -34,4 +34,9 @@
             &nbsp } <br />
         }
     </p>
+
+    <!-- more information -->
+    <a href="https://www.w3schools.com/java/java_conditions.asp">
+        <img style="width: 20px" src="res/information-button.png" />
+    </a>
 </asp:Content>

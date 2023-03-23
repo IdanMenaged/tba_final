@@ -130,6 +130,7 @@
     <Content Include="PAdminPage.aspx" />
     <Content Include="PContactUs.aspx" />
     <Content Include="PDeleteUser.aspx" />
+    <Content Include="PFinalVid.aspx" />
     <Content Include="PForLoop.aspx" />
     <Content Include="PHome.aspx" />
     <Content Include="PIf.aspx" />
@@ -139,6 +140,9 @@
     <Content Include="PRegister.aspx" />
     <Content Include="PUpdateInfo.aspx" />
     <Content Include="PWhileLoop.aspx" />
+    <Content Include="res\course-completion.png" />
+    <Content Include="res\home-page-banner.jpeg" />
+    <Content Include="res\information-button.png" />
     <Content Include="res\trash.png" />
     <Content Include="res\up-arrow.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -237,6 +241,13 @@
     </Compile>
     <Compile Include="PDeleteUser.aspx.designer.cs">
       <DependentUpon>PDeleteUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PFinalVid.aspx.cs">
+      <DependentUpon>PFinalVid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PFinalVid.aspx.designer.cs">
+      <DependentUpon>PFinalVid.aspx</DependentUpon>
     </Compile>
     <Compile Include="PForLoop.aspx.cs">
       <DependentUpon>PForLoop.aspx</DependentUpon>

@@ -17,7 +17,8 @@ namespace final_proj
             if (name == "אורח")
             {
                 links = "[<a href='PRegister.aspx'>הירשם.י</a>] <br />" +
-                    "[<a href='PLogin.aspx'>התחבר.י</a>]";
+                    "[<a href='PLogin.aspx'>התחבר.י</a>] <br />" +
+                    "[<a href='PAdminLogin.aspx'>התחבר כמנהל</a>]";
             }
             else if (Session["admin"].ToString() == "yes")
             {
