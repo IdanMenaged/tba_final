@@ -70,6 +70,38 @@
             line-height: 1.5;
             margin-bottom: 20px;
         }
+
+        /* form styles */
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #FFA500;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .feedback {
+            color: red;
+        }
     </style>
     <script>
         function displayTime() {
@@ -93,6 +125,93 @@
         }
 
         updateClock();
+
+        // user forms (registration & update)
+        function giveFeedback(feedbackElementId, msg) {
+            const feedbackElement = document.getElementById(feedbackElementId);
+            feedbackElement.innerHTML = msg;
+        }
+
+        function removeFeedback(feedbackElementId) {
+            const feedbackElement = document.getElementById(feedbackElementId);
+            feedbackElement.innerHTML = '';
+        }
+
+        /**
+         * checks if str1 includes only charcters from str2
+         */
+        function containsOnly(str1, str2) {
+            for (let char of str1) {
+                if (!str2.includes(char)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function isValidUsername(username) {
+            const minLength = 6;
+            const allowedChars = 'ABCDEFGHIJKMNLOPQRSTUVWXYZabcdefghijkmnlopqrstuvwxyz0123456789';
+
+            // check length
+            if (username.length < minLength) {
+                giveFeedback('usernameFeedback', 'שם משתמש חייב להיות 6 תווים או יותר');
+                return false;
+            }
+
+            // check allowed chars
+            if (!containsOnly(username, allowedChars)) {
+                giveFeedback('usernameFeedback', 'שם משתמש חייב להכיל רק תווים באנגלית ומספרים')
+                return false;
+            }
+
+            removeFeedback('usernameFeedback');
+            return true;
+        }
+
+        function isValidPassword(password) {
+            const minLength = 6;
+            const allowedChars = 'ABCDEFGHIJKMNLOPQRSTUVWXYZabcdefghijkmnlopqrstuvwxyz0123456789';
+
+            // check length
+            if (password.length < minLength) {
+                giveFeedback('passwordFeedback', 'סיסמה חייבת להיות 6 תווים או יותר');
+                return false;
+            }
+
+            // check allowed chars
+            if (!containsOnly(password, allowedChars)) {
+                giveFeedback('passwordFeedback', 'סיסמה חייבת להכיל רק תווים באנגלית ומספרים')
+                return false;
+            }
+
+            removeFeedback('passwordFeedback');
+            return true;
+        }
+
+        function isValidFirstName(name) {
+            const minLength = 2;
+
+            if (name.length < minLength) {
+                giveFeedback('firstNameFeedback', 'שם פרטי צריך להיות לפחות 2 תווים');
+                return false;
+            }
+
+            removeFeedback('firstNameFeedback');
+            return true;
+        }
+
+        function isValidLastName(name) {
+            const minLength = 2;
+
+            if (name.length < minLength) {
+                giveFeedback('lastNameFeedback', 'שם משפחה צריך להיות לפחות 2 תווים');
+                return false;
+            }
+
+            removeFeedback('lastNameFeedback');
+            return true;
+        }
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -102,7 +221,9 @@
         <tr class="base-tr header">
             <!-- login -->
             <td class="base-td">
-                login
+                שלום <% =name %>
+                <br />
+                <% =links %>
             </td>
             <!-- title -->
             <td class="base-td" id="top">
@@ -114,8 +235,8 @@
             <td class="base-td" id="clock" dir="ltr"></td>
         </tr>
         <!-- menu -->
-        <tr class="header">
-            <td colspan="3">
+        <tr class="header base-tr">
+            <td class="base-td" colspan="3">
                 [&nbsp <a href="PHome.aspx">בית</a> &nbsp] &nbsp &nbsp
                 [&nbsp <a href="PInputAndOutput.aspx">קלט ופלט</a> &nbsp] &nbsp &nbsp
                 [&nbsp <a href="PIf.aspx">משפטי תנאי</a> &nbsp] &nbsp &nbsp
@@ -125,8 +246,8 @@
             </td>
         </tr>
         <!-- main -->
-        <tr>
-            <td colspan="3">
+        <tr class="base-tr">
+            <td class="base-td" colspan="3">
                 <main>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
@@ -134,8 +255,8 @@
             </td>
         </tr>
         <!-- back to top button -->
-        <tr>
-            <td colspan="3">
+        <tr class="base-tr">
+            <td colspan="3" class="base-td">
                 <a href="#top">
                     <img src="res/up-arrow.png"
                         width="20"

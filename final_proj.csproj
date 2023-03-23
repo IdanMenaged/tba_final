@@ -126,13 +126,20 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="codeTips.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="PAdminLogin.aspx" />
+    <Content Include="PAdminPage.aspx" />
     <Content Include="PContactUs.aspx" />
+    <Content Include="PDeleteUser.aspx" />
     <Content Include="PForLoop.aspx" />
     <Content Include="PHome.aspx" />
     <Content Include="PIf.aspx" />
     <Content Include="PInputAndOutput.aspx" />
+    <Content Include="PLogin.aspx" />
+    <Content Include="PLogout.aspx" />
     <Content Include="PRegister.aspx" />
+    <Content Include="PUpdateInfo.aspx" />
     <Content Include="PWhileLoop.aspx" />
+    <Content Include="res\trash.png" />
     <Content Include="res\up-arrow.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -203,12 +210,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="PAdminLogin.aspx.cs">
+      <DependentUpon>PAdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAdminLogin.aspx.designer.cs">
+      <DependentUpon>PAdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PAdminPage.aspx.cs">
+      <DependentUpon>PAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAdminPage.aspx.designer.cs">
+      <DependentUpon>PAdminPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PContactUs.aspx.cs">
       <DependentUpon>PContactUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PContactUs.aspx.designer.cs">
       <DependentUpon>PContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDeleteUser.aspx.cs">
+      <DependentUpon>PDeleteUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PDeleteUser.aspx.designer.cs">
+      <DependentUpon>PDeleteUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="PForLoop.aspx.cs">
       <DependentUpon>PForLoop.aspx</DependentUpon>
@@ -238,6 +266,20 @@
     <Compile Include="PInputAndOutput.aspx.designer.cs">
       <DependentUpon>PInputAndOutput.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PLogin.aspx.cs">
+      <DependentUpon>PLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PLogin.aspx.designer.cs">
+      <DependentUpon>PLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PLogout.aspx.cs">
+      <DependentUpon>PLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PLogout.aspx.designer.cs">
+      <DependentUpon>PLogout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PRegister.aspx.cs">
       <DependentUpon>PRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -246,6 +288,13 @@
       <DependentUpon>PRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PUpdateInfo.aspx.cs">
+      <DependentUpon>PUpdateInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PUpdateInfo.aspx.designer.cs">
+      <DependentUpon>PUpdateInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PWhileLoop.aspx.cs">
       <DependentUpon>PWhileLoop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

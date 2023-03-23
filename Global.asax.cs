@@ -17,5 +17,19 @@ namespace final_proj
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        void Session_Start(object sender, EventArgs e)
+        {
+            Session["uName"] = "אורח";
+            Session["name"] = "אורח";
+            Session["admin"] = "no";
+        }
+
+        void Session_End(object sender, EventArgs e)
+        {
+            Session["uName"] = "אורח";
+            Session["name"] = "אורח";
+            Session["admin"] = "no";
+        }
     }
 }

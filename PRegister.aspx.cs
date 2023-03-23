@@ -12,6 +12,7 @@ namespace final_proj
     {
         public string msg;
 
+        // constants
         string dbFileName = "CodeTipsDB.mdf";
         string tableName = "usersTbl";
 
@@ -19,6 +20,7 @@ namespace final_proj
         {
             if (Request.Form["submit"] != null)
             {
+                // check if username exists
                 string uName = Request.Form["uName"];
                 string query = $"select * from {tableName} where uName = '{uName}'";
                 if (Helper.IsExist(dbFileName, query))

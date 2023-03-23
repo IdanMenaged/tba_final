@@ -1,124 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/codeTips.Master" AutoEventWireup="true" CodeBehind="PRegister.aspx.cs" Inherits="final_proj.PRegister" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style>
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            box-sizing: border-box;
-        }
-
-        input[type="submit"] {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #FFA500;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        .feedback {
-            color: red;
-        }
-    </style>
     <script>
-        function giveFeedback(feedbackElementId, msg) {
-            const feedbackElement = document.getElementById(feedbackElementId);
-            feedbackElement.innerHTML = msg;
-        }
+        function handleSubmit(event) {
+            const form = event.target;
+            const formData = new FormData(form);
 
-        function removeFeedback(feedbackElementId) {
-            const feedbackElement = document.getElementById(feedbackElementId);
-            feedbackElement.innerHTML = '';
-        }
-
-        /**
-         * checks if str1 includes only charcters from str2
-         */
-        function containsOnly(str1, str2) {
-            for (let char of str1) {
-                if (!str2.includes(char)) {
-                    return false;
-                }
+            if (isValidForm(formData)) {
+                console.log('submitted');
             }
-            return true;
+            else {
+                event.preventDefault(); // so that page is not refreshed and feedback could be shown
+                console.log('could not submit');
+            }
         }
-
-        function isValidUsername(username) {
-            const minLength = 6;
-            const allowedChars = 'ABCDEFGHIJKMNLOPQRSTUVWXYZabcdefghijkmnlopqrstuvwxyz0123456789';
-
-            // check length
-            if (username.length < minLength) {
-                giveFeedback('usernameFeedback', 'שם משתמש חייב להיות 6 תווים או יותר');
-                return false;
-            }
-
-            // check allowed chars
-            if (!containsOnly(username, allowedChars)) {
-                giveFeedback('usernameFeedback', 'שם משתמש חייב להכיל רק תווים באנגלית ומספרים')
-                return false;
-            }
-
-            removeFeedback('usernameFeedback');
-            return true;
-        }
-
-        function isValidPassword(password) {
-            const minLength = 6;
-            const allowedChars = 'ABCDEFGHIJKMNLOPQRSTUVWXYZabcdefghijkmnlopqrstuvwxyz0123456789';
-
-            // check length
-            if (password.length < minLength) {
-                giveFeedback('passwordFeedback', 'סיסמה חייבת להיות 6 תווים או יותר');
-                return false;
-            }
-
-            // check allowed chars
-            if (!containsOnly(password, allowedChars)) {
-                giveFeedback('passwordFeedback', 'סיסמה חייבת להכיל רק תווים באנגלית ומספרים')
-                return false;
-            }
-
-            removeFeedback('passwordFeedback');
-            return true;
-        }
-
-        function isValidFirstName(name) {
-            const minLength = 2;
-
-            if (name.length < minLength) {
-                giveFeedback('firstNameFeedback', 'שם פרטי צריך להיות לפחות 2 תווים');
-                return false;
-            }
-
-            removeFeedback('firstNameFeedback');
-            return true;
-        }
-
-        function isValidLastName(name) {
-            const minLength = 2;
-
-            if (name.length < minLength) {
-                giveFeedback('lastNameFeedback', 'שם משפחה צריך להיות לפחות 2 תווים');
-                return false;
-            }
-
-            removeFeedback('lastNameFeedback');
-            return true;
-        }
-
         /**
          * formData should be a FormData Object
          */
@@ -138,20 +32,6 @@
             }
             return isValid;
         }
-
-        function handleSubmit(event) {
-            const form = event.target;
-            const formData = new FormData(form);
-
-            if (isValidForm(formData)) {
-                console.log('submitted');
-            }
-            else {
-                event.preventDefault(); // so that page is not refreshed and feedback could be shown
-                console.log('could not submit');
-            }
-        }
-        
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -220,7 +100,7 @@
             <!-- submit -->
             <tr>
                 <td colspan="2">
-                    <input type="submit" name="submit" value="שלח" />
+                    <input type="submit" name="submit" value="שלח.י" />
                 </td>
             </tr>
         </table>
