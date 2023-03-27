@@ -132,6 +132,7 @@
     <Content Include="PDeleteUser.aspx" />
     <Content Include="PFinalVid.aspx" />
     <Content Include="PForLoop.aspx" />
+    <Content Include="PGames.aspx" />
     <Content Include="PHome.aspx" />
     <Content Include="PIf.aspx" />
     <Content Include="PInputAndOutput.aspx" />
@@ -140,10 +141,24 @@
     <Content Include="PRegister.aspx" />
     <Content Include="PUpdateInfo.aspx" />
     <Content Include="PWhileLoop.aspx" />
+    <Content Include="res\t-rex\default_100_percent\100-disabled.png" />
+    <Content Include="res\t-rex\default_100_percent\100-error-offline.png" />
+    <Content Include="res\t-rex\default_100_percent\100-offline-sprite.png" />
+    <Content Include="res\t-rex\default_200_percent\200-disabled.png" />
+    <Content Include="res\t-rex\default_200_percent\200-error-offline.png" />
+    <Content Include="res\t-rex\default_200_percent\200-offline-sprite.png" />
+    <Content Include="res\t-rex\hello-kugou.gif" />
+    <Content Include="res\t-rex\kumamon-runner.gif" />
+    <Content Include="res\t-rex\novas-coisas.gif" />
+    <Content Include="res\t-rex\offline-sprite-1x.png" />
+    <Content Include="res\t-rex\offline-sprite-2x.png" />
+    <Content Include="res\t-rex\screenshot.gif" />
+    <Content Include="res\t-rex\t-rex-runner-19janil.gif" />
+    <Content Include="res\t-rex\t-rex-runner-bot.gif" />
     <Content Include="res\course-completion.png" />
-    <Content Include="res\home-page-banner.jpeg" />
     <Content Include="res\information-button.png" />
     <Content Include="res\trash.png" />
+    <Content Include="res\home-page-banner.jpg" />
     <Content Include="res\up-arrow.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -255,6 +270,13 @@
     </Compile>
     <Compile Include="PForLoop.aspx.designer.cs">
       <DependentUpon>PForLoop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGames.aspx.cs">
+      <DependentUpon>PGames.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGames.aspx.designer.cs">
+      <DependentUpon>PGames.aspx</DependentUpon>
     </Compile>
     <Compile Include="PHome.aspx.cs">
       <DependentUpon>PHome.aspx</DependentUpon>

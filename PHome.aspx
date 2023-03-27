@@ -9,5 +9,5 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <img class="banner" src="res/home-page-banner.jpeg" />
+    <img class="banner" src="res/home-page-banner.jpg" />
 </asp:Content>

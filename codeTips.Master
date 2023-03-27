@@ -111,7 +111,7 @@
             const dateObj = new Date();
 
             // format the time
-            const formatted = dateObj.toLocaleTimeString();
+            const formatted = dateObj.toLocaleString();
 
             // display
             document.getElementById(outElementId).innerHTML = formatted;
