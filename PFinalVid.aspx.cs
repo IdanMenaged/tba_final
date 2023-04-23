@@ -24,7 +24,9 @@ namespace final_proj
                 content = "<img src='res/course-completion.png' style='width: 200px' />" +
                     "<p>ברכות! השלמת את קורס הג'אבה שלי!</p>" +
                     "<p>עכשיו נשאר רק דבר אחד...</p>" +
-                    "<a href='https://www.youtube.com/watch?v=o3iIzYv9z_0'>לסיום הקורס</a>";
+                    "<video width='320' height='240' controls>" +
+                        "<source src='res/final_vid.mp4' type='video/mp4'>" +
+                    "</video>";
             }
         }
     }

@@ -128,11 +128,14 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="PAdminLogin.aspx" />
     <Content Include="PAdminPage.aspx" />
+    <Content Include="PChat.aspx" />
     <Content Include="PContactUs.aspx" />
     <Content Include="PDeleteUser.aspx" />
     <Content Include="PFinalVid.aspx" />
+    <Content Include="PForgotPassword.aspx" />
     <Content Include="PForLoop.aspx" />
     <Content Include="PGames.aspx" />
+    <Content Include="PGames2.aspx" />
     <Content Include="PHome.aspx" />
     <Content Include="PIf.aspx" />
     <Content Include="PInputAndOutput.aspx" />
@@ -141,6 +144,17 @@
     <Content Include="PRegister.aspx" />
     <Content Include="PUpdateInfo.aspx" />
     <Content Include="PWhileLoop.aspx" />
+    <Content Include="res\hangman\1.png" />
+    <Content Include="res\hangman\2.png" />
+    <Content Include="res\hangman\3.png" />
+    <Content Include="res\hangman\6.png" />
+    <Content Include="res\hangman\7.png" />
+    <Content Include="res\hangman\8.png" />
+    <Content Include="res\hangman\game_over.jpg" />
+    <Content Include="res\hangman\game_over.mp3" />
+    <Content Include="res\hangman\win.mp3" />
+    <Content Include="res\hangman\win.png" />
+    <Content Include="res\post_it_note.png" />
     <Content Include="res\t-rex\default_100_percent\100-disabled.png" />
     <Content Include="res\t-rex\default_100_percent\100-error-offline.png" />
     <Content Include="res\t-rex\default_100_percent\100-offline-sprite.png" />
@@ -160,6 +174,7 @@
     <Content Include="res\trash.png" />
     <Content Include="res\home-page-banner.jpg" />
     <Content Include="res\up-arrow.png" />
+    <Content Include="res\final_vid.mp4" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -243,6 +258,13 @@
     <Compile Include="PAdminPage.aspx.designer.cs">
       <DependentUpon>PAdminPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PChat.aspx.cs">
+      <DependentUpon>PChat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PChat.aspx.designer.cs">
+      <DependentUpon>PChat.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PContactUs.aspx.cs">
       <DependentUpon>PContactUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -264,6 +286,13 @@
     <Compile Include="PFinalVid.aspx.designer.cs">
       <DependentUpon>PFinalVid.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PForgotPassword.aspx.cs">
+      <DependentUpon>PForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PForgotPassword.aspx.designer.cs">
+      <DependentUpon>PForgotPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PForLoop.aspx.cs">
       <DependentUpon>PForLoop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -277,6 +306,13 @@
     </Compile>
     <Compile Include="PGames.aspx.designer.cs">
       <DependentUpon>PGames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PGames2.aspx.cs">
+      <DependentUpon>PGames2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PGames2.aspx.designer.cs">
+      <DependentUpon>PGames2.aspx</DependentUpon>
     </Compile>
     <Compile Include="PHome.aspx.cs">
       <DependentUpon>PHome.aspx</DependentUpon>

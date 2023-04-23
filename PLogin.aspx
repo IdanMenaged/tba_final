@@ -31,5 +31,7 @@
         </table>
     </form>
 
+    <a href="PForgotPassword.aspx">שכחת סיסמה?</a>
+
     <% =msg %>
 </asp:Content>
