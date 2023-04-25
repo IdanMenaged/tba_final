@@ -52,7 +52,9 @@ namespace final_proj
 
                     MailMessage message = new MailMessage(from, to);
                     message.Subject = "שיחזור סיסמה";
-                    message.Body = $"הסיסמה שלך היא {password}";
+                    message.Body = $"הסיסמה שלך היא <h1>{password}</h1><br />";
+
+                    message.IsBodyHtml = true; // tells smtp to interpret the html tags
 
                     SmtpClient smtp = new SmtpClient("smtp.elasticemail.com", 2525) // service for sending emails
                     {
