@@ -90,15 +90,6 @@
             /** @const */
             var IS_HIDPI = window.devicePixelRatio > 1;
 
-            /** @const */
-            var IS_IOS = /iPad|iPhone|iPod/.test(window.navigator.platform);
-
-            /** @const */
-            var IS_MOBILE = /Android/.test(window.navigator.userAgent) || IS_IOS;
-
-            /** @const */
-            var IS_TOUCH_ENABLED = 'ontouchstart' in window;
-
             /**
              * Default game configuration.
              * @enum {number}
