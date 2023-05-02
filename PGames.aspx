@@ -236,8 +236,8 @@
                         this.config[setting] = value;
 
                         switch (setting) {
-                            case 'GRAVITY':
-                            case 'MIN_JUMP_HEIGHT':
+                            /* case 'GRAVITY':
+                            case 'MIN_JUMP_HEIGHT': */
                             case 'SPEED_DROP_COEFFICIENT':
                                 this.tRex.config[setting] = value;
                                 break;
@@ -277,23 +277,21 @@
                  * Load and decode base 64 encoded sounds.
                  */
                 loadSounds: function () {
-                    if (!IS_IOS) {
-                        this.audioContext = new AudioContext();
+                    this.audioContext = new AudioContext();
 
-                        var resourceTemplate =
-                            document.getElementById(this.config.RESOURCE_TEMPLATE_ID).content;
+                    var resourceTemplate =
+                        document.getElementById(this.config.RESOURCE_TEMPLATE_ID).content;
 
-                        for (var sound in Runner.sounds) {
-                            var soundSrc =
-                                resourceTemplate.getElementById(Runner.sounds[sound]).src;
-                            soundSrc = soundSrc.substr(soundSrc.indexOf(',') + 1);
-                            var buffer = decodeBase64ToArrayBuffer(soundSrc);
+                    for (var sound in Runner.sounds) {
+                        var soundSrc =
+                            resourceTemplate.getElementById(Runner.sounds[sound]).src;
+                        soundSrc = soundSrc.substr(soundSrc.indexOf(',') + 1);
+                        var buffer = decodeBase64ToArrayBuffer(soundSrc);
 
-                            // Async, so no guarantee of order in array.
-                            this.audioContext.decodeAudioData(buffer, function (index, audioData) {
-                                this.soundFx[index] = audioData;
-                            }.bind(this, sound));
-                        }
+                        // Async, so no guarantee of order in array.
+                        this.audioContext.decodeAudioData(buffer, function (index, audioData) {
+                            this.soundFx[index] = audioData;
+                        }.bind(this, sound));
                     }
                 },
 
@@ -349,10 +347,6 @@
                     this.tRex = new Trex(this.canvas, this.spriteDef.TREX);
 
                     this.outerContainerEl.appendChild(this.containerEl);
-
-                    if (IS_MOBILE) {
-                        this.createTouchController();
-                    }
 
                     this.startListening();
                     this.update();
@@ -605,16 +599,9 @@
                     document.addEventListener(Runner.events.KEYDOWN, this);
                     document.addEventListener(Runner.events.KEYUP, this);
 
-                    if (IS_MOBILE) {
-                        // Mobile only touch devices.
-                        this.touchController.addEventListener(Runner.events.TOUCHSTART, this);
-                        this.touchController.addEventListener(Runner.events.TOUCHEND, this);
-                        this.containerEl.addEventListener(Runner.events.TOUCHSTART, this);
-                    } else {
-                        // Mouse.
-                        document.addEventListener(Runner.events.MOUSEDOWN, this);
-                        document.addEventListener(Runner.events.MOUSEUP, this);
-                    }
+                    // Mouse.
+                    document.addEventListener(Runner.events.MOUSEDOWN, this);
+                    document.addEventListener(Runner.events.MOUSEUP, this);
                 },
 
                 /**
@@ -624,14 +611,8 @@
                     document.removeEventListener(Runner.events.KEYDOWN, this);
                     document.removeEventListener(Runner.events.KEYUP, this);
 
-                    if (IS_MOBILE) {
-                        this.touchController.removeEventListener(Runner.events.TOUCHSTART, this);
-                        this.touchController.removeEventListener(Runner.events.TOUCHEND, this);
-                        this.containerEl.removeEventListener(Runner.events.TOUCHSTART, this);
-                    } else {
-                        document.removeEventListener(Runner.events.MOUSEDOWN, this);
-                        document.removeEventListener(Runner.events.MOUSEUP, this);
-                    }
+                    document.removeEventListener(Runner.events.MOUSEDOWN, this);
+                    document.removeEventListener(Runner.events.MOUSEUP, this);
                 },
 
                 /**
@@ -992,7 +973,7 @@
              * @return {number}
              */
             function getTimeStamp() {
-                return IS_IOS ? new Date().getTime() : performance.now();
+                return new Date().getTime();
             }
 
 
@@ -1297,8 +1278,7 @@
 
                         // Check if obstacle can be positioned at various heights.
                         if (Array.isArray(this.typeConfig.yPos)) {
-                            var yPosConfig = IS_MOBILE ? this.typeConfig.yPosMobile :
-                                this.typeConfig.yPos;
+                            var yPosConfig = this.typeConfig.yPosMobile;
                             this.yPos = yPosConfig[getRandomNum(0, yPosConfig.length - 1)];
                         } else {
                             this.yPos = this.typeConfig.yPos;
